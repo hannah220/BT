@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.euc) (TeX Live 2016) (preloaded format=platex 2017.2.9)  28 JAN 2018 20:03
+This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.euc) (TeX Live 2016) (preloaded format=platex 2017.2.9)  29 JAN 2018 02:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -171,7 +171,9 @@ slashbox style by K.Yasuoka, May 1993.
 \@slashboxht=\count107
 \@slashsepl=\dimen139
 \@slashsepr=\dimen140
-) (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hyperref.sty
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write3
+ Excluding comment 'comment') (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2016/05/05 v6.83n Hypertext links for LaTeX
  (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
@@ -281,24 +283,24 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 ) (/Users/hannah/BT/hannah/.texpadtmp/b-thesis.aux)
 \openout1 = `b-thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 \AtBeginShipoutBox=\box56
  (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2016/05/09 v1.1c Standard LaTeX Color (DPC)
@@ -311,7 +313,7 @@ File: dvips.def 2015/12/30 v3.0k Driver-dependent file (DPC,SPQR)
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2015/12/30 v3.0k Driver-dependent file (DPC,SPQR)
 ))
-Package hyperref Info: Link coloring ON on input line 20.
+Package hyperref Info: Link coloring ON on input line 21.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
  (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -319,47 +321,47 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count120
 )
-LaTeX Info: Redefining \ref on input line 20.
-LaTeX Info: Redefining \pageref on input line 20.
-LaTeX Info: Redefining \nameref on input line 20.
+LaTeX Info: Redefining \ref on input line 21.
+LaTeX Info: Redefining \pageref on input line 21.
+LaTeX Info: Redefining \nameref on input line 21.
  (/Users/hannah/BT/hannah/.texpadtmp/b-thesis.out) (/Users/hannah/BT/hannah/.texpadtmp/b-thesis.out)
-\@outlinefile=\write3
-\openout3 = `b-thesis.out'.
+\@outlinefile=\write4
+\openout4 = `b-thesis.out'.
 
 
 Titlepage
-LaTeX Font Info:    Try loading font information for U+msa on input line 30.
+LaTeX Font Info:    Try loading font information for U+msa on input line 31.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 30.
+LaTeX Font Info:    Try loading font information for U+msb on input line 31.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 30.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 31.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 30.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 31.
  [0
 
 ]
 Abstracts
 (./abstract.tex)
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 34.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 35.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 34.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 35.
 
-Overfull \hbox (62.14691pt too wide) in paragraph at lines 34--34
+Overfull \hbox (62.14691pt too wide) in paragraph at lines 35--35
  [] 
  []
 
 [1]
 Indexes
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <20.74> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 44.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 45.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <20.74> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 44.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 45.
 (/Users/hannah/BT/hannah/.texpadtmp/b-thesis.toc
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 1.
@@ -369,52 +371,55 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
 
 
 ])
-\tf@toc=\write4
-\openout4 = `b-thesis.toc'.
+\tf@toc=\write5
+\openout5 = `b-thesis.toc'.
 
  [2] (/Users/hannah/BT/hannah/.texpadtmp/b-thesis.lof)
-\tf@lof=\write5
-\openout5 = `b-thesis.lof'.
+\tf@lof=\write6
+\openout6 = `b-thesis.lof'.
 
  [3
 
 ] (/Users/hannah/BT/hannah/.texpadtmp/b-thesis.lot)
-\tf@lot=\write6
-\openout6 = `b-thesis.lot'.
+\tf@lot=\write7
+\openout7 = `b-thesis.lot'.
 
  [4
 
 ]
 Main part
 第1\nobreakspace {}章
-(./intro.tex [1
+(./intro.tex Excluding 'comment' comment. [1
 
 
 
 ]
 
+LaTeX Warning: Citation `VALE' on page 2 undefined on input line 39.
+
+
 LaTeX Font Warning: Font shape `JT1/mc/m/sl' undefined
-(Font)              using `JT1/mc/m/n' instead on input line 38.
+(Font)              using `JT1/mc/m/n' instead on input line 40.
 
 
 LaTeX Font Warning: Font shape `JY1/mc/m/sl' undefined
-(Font)              using `JY1/mc/m/n' instead on input line 38.
+(Font)              using `JY1/mc/m/n' instead on input line 40.
 
 [2]
 File: pics/KVM+OVS.pdf Graphic file (type pdf)
  <pics/KVM+OVS.pdf>
-Overfull \hbox (16.84842pt too wide) in paragraph at lines 49--50
+Overfull \hbox (16.84842pt too wide) in paragraph at lines 51--52
  [] 
  []
 
 File: pics/Docker.pdf Graphic file (type pdf)
 <pics/Docker.pdf>
-Overfull \hbox (16.84842pt too wide) in paragraph at lines 56--57
+Overfull \hbox (16.84842pt too wide) in paragraph at lines 58--59
  [] 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 47--61
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 49--63
 [][]$[]$[] []$[]$[] 
  []
 
@@ -433,7 +438,11 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 20.
 File: pics/NFV_FG.pdf Graphic file (type pdf)
- <pics/NFV_FG.pdf> [6]) [7]
+ <pics/NFV_FG.pdf> [6]
+
+LaTeX Warning: Citation `OpenDaylight' on page 7 undefined on input line 39.
+
+) [7]
 第3\nobreakspace {}章
 (./overview.tex [8
 
@@ -442,7 +451,7 @@ File: pics/overview_1.pdf Graphic file (type pdf)
  <pics/overview_1.pdf>
 File: pics/overview_2.pdf Graphic file (type pdf)
  <pics/overview_2.pdf>
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 52--66
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 50--64
 [][]$[]$[] []$[]$[] 
  []
 
@@ -503,30 +512,33 @@ LaTeX Font Warning: Font shape `JT1/gt/m/it' undefined
 LaTeX Font Warning: Font shape `JY1/gt/m/it' undefined
 (Font)              using `JY1/gt/m/n' instead on input line 27.
 
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 102.
- [33
+[33
 
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 102.
+])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 103.
+ [34]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 103.
  (/Users/hannah/BT/hannah/.texpadtmp/b-thesis.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 102.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 102.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 103.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 103.
 Package rerunfilecheck Info: File `b-thesis.out' has not changed.
 (rerunfilecheck)             Checksum: CF9ADB50320D22FBFA0F6AC0989FFFEF;4141.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 102.
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
  ) 
 Here is how much of TeX's memory you used:
- 6145 strings out of 493693
- 89208 string characters out of 6149788
- 193776 words of memory out of 5000000
- 9567 multiletter control sequences out of 15000+600000
+ 6195 strings out of 493693
+ 89927 string characters out of 6149788
+ 194503 words of memory out of 5000000
+ 9613 multiletter control sequences out of 15000+600000
  14911 words of font info for 61 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 31i,14n,31p,1299b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 31i,14n,31p,1299b,442s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/hannah/BT/hannah/.texpadtmp/b-thesis.dvi (39 pages, 161960 bytes).
+Output written on /Users/hannah/BT/hannah/.texpadtmp/b-thesis.dvi (40 pages, 167900 bytes).
