@@ -1,0 +1,102 @@
+\documentclass[12pt]{b-thesis}
+\usepackage{ascmac,amsmath,amssymb,amsthm}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{slashbox}
+%% pdf のしおり を作る
+\usepackage[dvipdfmx,%
+bookmarks=true,bookmarksnumbered=true,bookmarkstype=toc,%
+colorlinks=true,% 
+%colorlinks=false,%
+linkcolor=black,%
+citecolor=black,%
+filecolor=black,%
+%pagecolor=black,%
+urlcolor=black%
+]{hyperref}
+%% pdf の しおり をEUCから unicode へ変換
+\AtBeginDvi{\special{pdf:tounicode EUC-UCS2}}
+\begin{document}
+%%%%     Title    %%%%%
+\typeout{Titlepage}
+\title{Lightweight Network Function Chaining Mechanism \\ in Linux Kernel}
+\teacher{寺岡 文男 教授}
+\subteacher{金子}
+\course{情報工学}
+\id{61419670}
+\author{吉用 ハンナ}
+\maketitle
+
+%%%%   Abstract   %%%%%
+\typeout{Abstracts} 
+\input{abstract} 
+\makejabstract 
+
+\clearpage
+
+%%%%     目次     %%%%%
+\typeout{Indexes}
+
+\setcounter{page}{1}
+\pagenumbering{roman}
+
+\tableofcontents
+\thispagestyle{plain}
+
+\listoffigures   %%% 図目次
+\listoftables    %%% 表目次
+
+\clearpage
+%----------------------------------------------------------------------
+%%%%     Body    %%%%%
+\typeout{Main part}
+%\setlength{\baselineskip}{16pt}
+
+\pagestyle{headings}
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\clearpage
+
+\chapter{序論}
+\label{chap:intro}
+\input{intro}
+
+\chapter{関連研究}
+\label{chap:related}
+\input{related}
+
+\chapter{Overview}
+\label{chap:overview}
+\input{overview}
+
+\chapter{Kernel-based NFCI Architecture}
+\label{chap:architecture}
+\input{architecture}
+
+\chapter{実装}
+\label{chap:implementation}
+\input{implementation}
+
+\chapter{評価・考察}
+\label{chap:validation}
+\input{validation}
+
+\chapter{結論}
+\label{chap:conclusion}
+\input{conclusion}
+
+\chapter*{謝辞}
+\addcontentsline{toc}{chapter}
+{\protect\numberline {}謝辞}
+\input{gratitude}
+
+%%%%%    参考文献    %%%%%
+\typeout{References}
+%%------------
+\thispagestyle{plain}
+%\bibliographystyle{junsrt}
+\bibliographystyle{IEEEtran}
+\bibliography{b-thesis}
+\end{document}

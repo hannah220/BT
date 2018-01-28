@@ -1,0 +1,283 @@
+% mythesis.sty 28-Nov-91 by Toshio Hitotsu hirotsu@mt.cs.keio.ac.jp
+\typeout{Document Style `mythesis.sty'. Released 28 Nov 1991}
+
+\input jreport.sty
+
+%
+%       thesis style
+%
+
+\def\appendix{\par
+ \setcounter{chapter}{0}
+ \setcounter{section}{0}
+ \def\@chapapp{Appendix \thechapter}
+ \def\thechapter{\Alph{chapter}}}
+%\renewcommand{\appendixname}{Appendix }
+
+\def\@chapapp{第\thechapter~章}
+\def\fnum@figure{図\thefigure}
+\def\fnum@table{表\thetable}
+\def\abstract{\if@twocolumn
+\section*{概要}
+\else \small
+\begin{center}
+{\bf 概要\vspace{-.5em}\vspace{0pt}}
+\end{center}
+\quotation
+\fi}
+
+%\def\@makechapterhead#1{ \vspace*{150pt} { \parindent 0pt \raggedright
+% \ifnum \c@secnumdepth >\m@ne \centerline{\Large\gt\bf \@chapapp} \par
+% \vskip 40pt \fi \centerline{\Large \gt\bf #1} \par
+% \nobreak \vskip 40pt }\clearpage }
+
+%\def\@makeschapterhead#1{ \vspace*{10pt} { \parindent 0pt \raggedright
+% \Large \gt\bf #1\par
+% \nobreak \vskip 40pt } }
+
+%\def\chapter{ \clearpage \thispagestyle{plain}  \global\@topnum\z@
+%\@afterindentfalse \secdef\@chapter\@schapter}
+
+%\def\@chapter[#1]#2{\ifnum \c@secnumdepth >\m@ne
+% \refstepcounter{chapter}
+% \typeout{\@chapapp}
+% \addcontentsline{toc}{chapter}{\protect
+% \numberline{\thechapter}#1}\else
+% \addcontentsline{toc}{chapter}{#1}\fi}
+% \chaptermark{#1}
+% \addtocontents{lof}{\protect\addvspace{10pt}}
+% \addtocontents{lot}{\protect\addvspace{10pt}}
+% \if@twocolumn
+%\@topnewpage[\@makechapterhead{#2}]
+% \else \@makechapterhead{#2}
+% \@afterheading \fi}
+%\def\@schapter#1{\if@twocolumn \@topnewpage[\@makeschapterhead{#1}]
+% \else \@makeschapterhead{#1}
+% \@afterheading\fi}
+
+\def\@makechapterhead#1{ \vspace*{40pt} { \parindent 0pt \raggedright 
+ \ifnum \c@secnumdepth >\m@ne \huge\bf \@chapapp{} \par 
+ \vskip 20pt \fi \huge \bf #1\par 
+ \nobreak \vskip 40pt } }
+
+\def\@makeschapterhead#1{ \vspace*{40pt} { \parindent 0pt \raggedright 
+ \huge \bf #1\par 
+ \nobreak \vskip 40pt } }
+
+\def\chapter{\cleardoublepage \thispagestyle{plain} \global\@topnum\z@
+\@afterindenttrue \secdef\@chapter\@schapter} 
+\def\@chapter[#1]#2{\ifnum \c@secnumdepth >\m@ne
+ \refstepcounter{chapter}
+ \typeout{\@chapapp}
+ \addcontentsline{toc}{chapter}{\protect
+ \numberline{\thechapter}#1}\else
+ \addcontentsline{toc}{chapter}{#1}\fi
+ \chaptermark{#1}
+ \addtocontents{lof}{\protect\addvspace{10pt}}
+\addtocontents{lot}{\protect\addvspace{10pt}} \if@twocolumn
+\@topnewpage[\@makechapterhead{#2}] 
+ \else \@makechapterhead{#2}
+ \@afterheading \fi} 
+
+\def\@schapter#1{\if@twocolumn \@topnewpage[\@makeschapterhead{#1}]
+ \else \@makeschapterhead{#1} 
+ \@afterheading\fi}
+
+\makeatletter
+\def\ps@headings{\let\@mkboth\markboth
+\def\@oddhead{$\underline{\makebox[\textwidth]{{\sl\leftmark}\hfill{\sl\rightmark}}}$}
+\def\@oddfoot{\rm\hfil\thepage\hfil}
+\def\@evenhead{$\underline{\makebox[\textwidth]{{\sl\leftmark}\hfill{\sl\rightmark}}}$}
+\def\@evenfoot{\rm\hfil\thepage\hfil}
+\def\chaptermark##1{\markboth{\ifnum\c@secnumdepth >\m@ne\thechapter.\ \fi ##1}{}}
+\def\sectionmark##1{\markright{\ifnum\c@secnumdepth >\z@\thesection.\ \fi ##1}}}
+
+%%\newif\if西暦\let\if西暦=\iffalse \def\西暦{\let\if西暦=\iftrue}
+%%\def\thisyear{{\if西暦\count0=\year\else%
+%%\count0=\year\advance\count0 -1989 平成\,\fi%
+%%\ifnum\count0=1 元\else\number\count0\fi\,年度}}
+
+\newif\if西暦\let\if西暦=\iffalse \def\西暦{\let\if西暦=\iftrue}
+\def\thisyear{\count0=\year %
+\ifnum\month < 4 \advance\count0 -1 \fi%
+\ifnum\count0=1 元\else\number\count0\fi\,年度}
+
+
+\def\id#1{\gdef\@id{#1}}
+\def\teacher#1{\gdef\@teacher{#1}}
+\def\subteacher#1{\gdef\@subteacher{#1}}
+\def\course#1{\gdef\@course{#1}}
+
+\def\maketitle{\begin{titlepage}
+\let\footnoterule\relax \thispagestyle{empty} \setcounter{page}{0}
+\null
+\vfil
+\begin{center}
+\vskip 1cm
+%\underline{\Large 修士論文} \vskip 2cm
+\underline{\Large 卒業論文} \vskip 2cm
+\leftline{\underline{題目}} \vskip 1cm
+{\Large\gt\bf \@title }\par \vskip 2cm 
+\leftline{\underline{指導教授}} \vskip 2.5cm
+{\Large \@teacher} \vskip 0.5cm
+{\Large \@subteacher} \vskip 2.5cm
+%{\Large 慶應義塾大学大学院} \vskip  1.5cm
+%{\Large 理工学研究科 \@course 専攻} \vskip  1cm
+{\Large 慶應義塾大学} \vskip  1.5cm
+{\Large 理工学部 \@course 科} \vskip  1cm
+{\Large \thisyear} \vskip 0.7cm
+{\Large \@id} \vskip 0.7cm
+{\Large \@author}
+\end{center} \par
+\@thanks
+\vfil
+\null
+\end{titlepage}
+\setcounter{footnote}{0} \let\thanks\relax
+\let\maketitle\relax \pagebreak }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%          by shio                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\abstform{
+ \oddsidemargin=0truecm
+ \evensidemargin=0truecm
+ \topmargin=0truecm
+ \textwidth=18truecm
+ \textheight=25truecm
+ \baselineskip=6mm
+ \setlength{\unitlength}{1mm}
+ \thispagestyle{empty}
+}
+\def\absttextform{
+ \renewcommand{\baselinestretch}{1.2}
+% \baselineskip=3ex
+% \baselineskip=2.9ex
+% \parskip 2ex
+ \parskip 1ex
+ \parindent 1.5em
+}
+%%%%%%%
+
+\long\def\jabst#1{\long\gdef\@jabst{#1}}
+\long\def\jabstfoot#1{\long\gdef\@jabstfoot{#1}}
+
+%%%%%%%
+\def\makejabstract{\titlepage{\abstform
+ \begin{center}
+ \begin{picture}(180,225)(0,0)
+ \huge
+ \put(87,223){\makebox(0,0){論 \ \ \ 文 \ \ \ 要 \ \ \ 旨}}
+ \normalsize
+% \put(87,-14){\makebox(0,0)
+%    {慶 應 義 塾 大 学 理 工 学 研 究 科 修 士 課 程}}
+ \put(87,-14){\makebox(0,0)
+    {慶 應 義 塾 大 学 理 工 学 部}}
+ \footnotesize
+ \put(30,-20){\makebox(0,0){◎内容の要旨は約600字}}
+ \normalsize
+% \put(12.5,209){\makebox(0,0){専攻}}
+ \put(12.5,209){\makebox(0,0){学科}}
+ \put(57.5,209){\makebox(0,0){学籍番号}}
+% \put(57.5,211.5){\makebox(0,0){学籍}}
+% \put(57.5,206.5){\makebox(0,0){番号}}
+ \put(117.5,209){\makebox(0,0){氏名}}
+ \put(8,201){\makebox(0,0)[tl]{(論文題目)}}
+% \put(8,181){\makebox(0,0)[tl]{(内容の要旨)}}
+ \put(5,-10){\framebox(160,225){}}
+ \put(5,183){\line(1,0){160}}
+ \put(5,203){\line(1,0){160}}
+ \put(45,203){\line(0,1){12}}
+ \put(110,203){\line(0,1){12}}
+ \put(20,203){\dashbox(0,12){}}
+ \put(70,203){\dashbox(0,12){}}
+ \put(125,203){\dashbox(0,12){}}
+
+ {\normalsize
+ \put(32.5,209){\makebox(0,0){\@course}}
+ \put(90,209){\makebox(0,0){\@id}}
+ \put(145,209){\makebox(0,0){\@author}}
+ \put(88,192){\makebox(0,0)[c]{\large\bf \shortstack{\@title}}}
+ \put(84,180){\makebox(0,0)[t]{
+ \begin{minipage}[t]{140mm}\absttextform
+ \@jabst
+ \end{minipage}
+ }}}
+ \end{picture}
+ \end{center}}}
+
+\long\def\abst#1{\long\gdef\@abst{#1}}
+\def\courseinenglish#1{\gdef\@courseinenglish{#1}}
+\def\authorinenglish#1{\gdef\@authorinenglish{#1}}
+\def\titleinenglish#1{\gdef\@titleinenglish{#1}}
+
+\def\makeabstract{\titlepage{\abstform
+ \begin{center}
+ \begin{picture}(180,225)(0,-5)
+ \huge
+% \put(87,223){\makebox(0,0){Summary \ of \ Master's \ Thesis}}
+ \put(87,223){\makebox(0,0){Summary \ of \ Bachelor's \ Thesis}}
+ \normalsize
+% \put(87,-24)
+%    {\makebox(0,0){Graduate School of Science and Technology, KEIO UNIVERSITY}}
+ \put(87,-24)
+    {\makebox(0,0){Faculty of Science and Technology, KEIO UNIVERSITY}}
+ \scriptsize
+ \put(87,-30)
+ {\makebox(0,0)
+     {◎ The contents of English summary should be written in about 300
+     words.}}
+ \normalsize
+ \put(37.5,211){\makebox(0,0){Course}}
+ \put(87.5,211){\makebox(0,0){Student No.}}
+ \put(135,211){\makebox(0,0){SURNAME, Firstname}}
+ \put(8,196){\makebox(0,0)[tl]{Title}}
+ \put(5,-20){\framebox(160,235){}}
+ \put(5,178){\line(1,0){160}}
+ \put(5,198){\line(1,0){160}}
+ \put(70,198){\line(0,1){17}}
+ \put(105,198){\line(0,1){17}}
+ \put(5,208){\dashbox(160,0){}}
+
+ {\large
+ \put(37.5,202){\makebox(0,0){\@courseinenglish }}
+ \put(87.5,202){\makebox(0,0){\@id }}
+ \put(135,202){\makebox(0,0){\@authorinenglish }}
+ \put(88,187){\makebox(0,0){\large\bf \shortstack{\@titleinenglish}}}
+% \put(88,187){\makebox(0,0){\Large\bf \shortstack{ \@titleinenglish }}}
+% \put(84,170){\makebox(0,0)[t]{
+ \put(84,173){\makebox(0,0)[t]{
+ \begin{minipage}{140mm}\absttextform
+ \@abst
+ \end{minipage}}}}
+ \end{picture}
+ \end{center}}}
+
+\def\thebibliography#1{\chapter*{参 考 文 献\@mkboth
+ {参 考 文 献}{}\addcontentsline{toc}{chapter}{\numberline {}参考文献}
+%\def\thebibliography#1{\chapter*{Reference\@mkboth
+% {Reference}{}\addcontentsline{toc}{chapter}{\numberline {}Reference}
+}\list
+ {[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
+ \advance\leftmargin\labelsep
+ \usecounter{enumi}}
+ \def\newblock{\hskip .11em plus .33em minus .07em}
+ \sloppy
+ \sfcode`\.=1000\relax}
+\let\endthebibliography=\endlist
+
+%
+%       set style paramater
+%
+\setlength{\baselineskip}{25pt}
+\setlength{\textheight}{684pt}
+\setlength{\topmargin}{-1.5cm}
+\setlength{\headheight}{20pt}
+\setlength{\textwidth}{450pt}
+\setlength{\oddsidemargin}{5pt}
+\setlength{\evensidemargin}{5pt}
+\setlength{\parindent}{12pt}
+\setlength{\topskip}{30pt}
+\setlength{\footskip}{45pt}
+
+

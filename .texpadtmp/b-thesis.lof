@@ -1,0 +1,30 @@
+\addvspace {10pt}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Traffic in VM-based NFV node}}{3}{figure.1.1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Traffic in Container-based NFV node}}{3}{figure.1.2}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Traffic in Kernel-based NFV node}}{4}{figure.1.3}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Architectural framework of NFV by ETSI.}}{6}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces NFV Forwarding Graph}}{7}{figure.2.2}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces NF request by user}}{11}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces NF placement by NSP}}{11}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces NSH Architecture}}{13}{figure.3.3}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Netfilter hooks in network stack}}{15}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Ipchains rules and targets}}{17}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Structure of Doubly Linked List}}{18}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces list head}}{18}{figure.4.4}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Filter Table}}{21}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Struct nf\_target}}{22}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Struct ipt\_entry}}{22}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Struct ipt\_entry\_target}}{23}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Struct ipt\_entry\_match}}{23}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces The NF chaining mechanism in ipt\_do\_table}}{25}{figure.5.6}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Implementation of nf\_dad\_func function for DDos Attack Detection}}{26}{figure.5.7}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Direction of flows in experiment1}}{28}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Throughput at VM2 and VM3}}{28}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Histogram of tasks on-CPU time}}{29}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Routing of flows among general OSs}}{30}{figure.6.4}
+\addvspace {10pt}

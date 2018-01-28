@@ -1,0 +1,48 @@
+\section{ETSI (European Telecommunications Standards Institute)}
+ETSI\cite{ETSI} is a standardization organization in the telecommunications industry. Telecoms networks contain a large number of proprietary hardware and launch of new services often relied on on-site installation. In order to realize more flexibility for providing services ETSI proposed the NFV concept in 2012. Figure \ref{fig: ETSI_arc} shows the NFV architectural framework. The right box with dotted line represents the control plane and bigger box in the left with virtualized NFs atop describes NFV infrastructure installed in data plane. There is virtualization layer and virtual instances to support NFs because VM is used to realize NF. Detailed architecture is explained in the 2.2 section. 
+
+\begin{figure*}
+	\centering
+	\includegraphics[width=100mm]{pics/ETSI_architecture.pdf}
+	\caption{Architectural framework of NFV by ETSI.}
+	\label{fig: ETSI_arc}
+\end{figure*}
+
+\section{OPNFV --- Open Platform for NFV}
+\subsection{OPNFV: Architecture}
+OPNFV\cite{OPNFV} is an open source project that realizes the architecture proposed by ETSI to provide carrier-grade, integrated platform for NFV. The OPNFV software platform is comprised of lot of projects and components related to NFV technologies. The architectural framework consists of the following 5 components. 
+\begin{enumerate}
+	\item Virtualised Network Function (VNF): One VNF may consists of multiple VMs, or in other cases, the whole VNF can be realized in a single VM.  
+	\item Network Functions Virtualization Infrastructure (NFVI): NFVI has hardware and software part. Hardware NFVI corresponds to physical hardware such as servers, storage and network hardware. Software NFVI has 3 elements. First, virtual compute element which provides datapath for running VMs such as KVM. Secondly, virtual network element such as OVS, and thirdly virtual storage. 
+	\item Virtual Infrastructure Management (VIM):  VIM controls and manages the interaction of a VNF with virtual compute, storage and network, as well as their virtualization. More specifically, it is in charge of allocating/releasing VMs on the hypervisors, increasing/decreasing resources to VMs. OpenStack, one of the largest open source projects in the world, is used as VIM in OPNFV. OpenStack itself is an umbrella project, containing numerous projects underneath. For example, Nova project for virtual compute service and Cinder project for virtual storage service are used in OpenStack.
+	\item NFV Management and Orchestration (MANO) : Decoupling VNF from the underlying hardware resources requires a orchestrater that manages virtualisation-specific tasks. It includes instantiating VNFs at appropriate locations, allocating hardware resources to the VNFs, keeping track of VNF instances location, etc. MANO is responsible of managing NFV infrastructure as described above to realizing network services. Following components manage virtual compute, networking, storage and VM resources. 
+		\begin{itemize}
+			\item NFV Orchestrater: Responsible for loading new Network Services and monitoring its lifecycle, and global resource management. As in Figure 3, NFV orchestrater has interface between VNF Manager, VIM and OSS/BSS (Operation Support System / Business Support System). The first Or-Vnfm interface is used for VNF Manger to request virtual resources, and for NFV Orchestrater to send configuration information to VNF Manager so that VNF can be configured according to network service's demand. Or-Vi interface sends resource reservation/allocation requests by NFV Orchestrator. OSS/BSS is an interface that service provider operates through. 
+			\item VNF Manager: Monitors lifecycle of VNF. Vi-Vnfm interface conveys resource allocation requests by VNF Manager to VIM. Ve-Vnfm interface is used for VNF lifecycle management and exchange of state information. 
+		\end{itemize}
+	\item Software Defined Networking (SDN) Controller: (SDN) Controller is control plane that is responsible for programming physical and virtual networking elements. SDN controller has northbound interface that connects with MANO and VIM, and southbound interface to physical and virtual networking switches. One of the southbound interface that is used is OpenFlow, which defines the communication protocol to enable SDN controller to directly interact with the forwarding plane. 
+The aim of SDN controller in OPNFV is to set up overlay networks that connects VMs, so that NF chaining is accomplished. SDN controllers such as OpenDaylight, OpenStack Neutron and ONOS are integrated in OPNFV.
+\end{enumerate}
+
+A Network Service is described as a NF Forwarding Graph in OPNFV. NF Forwarding Graph has NF nodes connected with virtual link and underlying physical nodes connected with physical link. Figure 4 depicts an example of NF chaining. Forwarding Graph is composed of NF, VNF1, VNF2, ..,VNF4. Depending on the flow, traffic can go through NF chaining of NF1, NF3, NF4 or NF1, NF2, NF4. 
+\begin{figure*}
+	\centering
+	\includegraphics[width=120mm]{pics/NFV_FG.pdf}
+	\caption{NFV Forwarding Graph}
+	\label{fig: OPNFV_FG}
+\end{figure*}
+
+\subsection{Disadvantages of OPNFV}
+Although OPNFV is a NFV platform that is widely deployed by enterprise and service provider, I state the following two problems.
+\begin{itemize}
+	\item Complexity of OPNFV \\
+		The architecture of OPNFV contains numerous middleware like OpenStack, OpenDaylight, KVM, etc. And each of them are deriving from different project. This makes the architecture to be more complicated and thus prone to compiling errors in different environments. 
+	\item Resource consumption \\
+		By allocating virtual instances to each of the VM, it leads to a lot of resource consumption when deploying a large number of VMs. 
+	\item 
+	\item Scaling problem of OPNFV \\
+		OPNFV uses NFV Forwarding Graph to achieve NF chaining. SDN controller like OpenDaylight installs flow classifier in each NFV node. And OVS in NFV node forward traffic according to the installed classifier, such as passing packets through NF on its node or transmitting packets to another node. Since a SDN controller is responsible for setting up service chain, it is not realistic to be deploy in wide area network.
+\end{itemize}
+
+
+

@@ -1,0 +1,50 @@
+\contentsline {chapter}{\numberline {1}序論}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Network Function Chaining Infrastructure based on Virtualization Technologies}{1}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Network Function Virtualization}{1}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Advantage of VM-based/Container-based NFV}{1}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}Disadvantage of VM-based/Docker-based NFV}{2}{subsection.1.1.3}
+\contentsline {subsection}{\numberline {1.1.4}Packet forwarding: VM-based NFV node}{2}{subsection.1.1.4}
+\contentsline {subsection}{\numberline {1.1.5}Packet forwarding: Container-based NFV}{2}{subsection.1.1.5}
+\contentsline {section}{\numberline {1.2}Overhead of NFCI based on Virtualization Technologies}{3}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Memory copy}{3}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Resource Consumption}{3}{subsection.1.2.2}
+\contentsline {section}{\numberline {1.3}Proposal: Lightweight NFC mechanism in Linux Kernel}{3}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Structure of the paper}{4}{subsection.1.3.1}
+\contentsline {chapter}{\numberline {2}関連研究}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}ETSI (European Telecommunications Standards Institute)}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}OPNFV --- Open Platform for NFV}{5}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}OPNFV: Architecture}{5}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Disadvantages of OPNFV}{7}{subsection.2.2.2}
+\contentsline {chapter}{\numberline {3}Overview}{8}{chapter.3}
+\contentsline {section}{\numberline {3.1}Necessity of in-kernel NF chaining}{8}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Categorization of Network Functions}{8}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Example of Network Functions and its realizability in kernel}{9}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}The role of Kernel-based NFCI node in WAN}{10}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}The structure of WAN and the position of Kernel-based NFCI node}{10}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Placement of Network Function}{11}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Scope of the paper}{12}{subsection.3.2.3}
+\contentsline {chapter}{\numberline {4}Kernel-based NFCI Architecture}{14}{chapter.4}
+\contentsline {subsection}{\numberline {4.0.1}Netfilter: Overview}{14}{subsection.4.0.1}
+\contentsline {subsection}{\numberline {4.0.2}Netfilter: Table}{15}{subsection.4.0.2}
+\contentsline {subsection}{\numberline {4.0.3}Netfilter: Rule and Target}{16}{subsection.4.0.3}
+\contentsline {section}{\numberline {4.1}Kernel-based NFV architecture}{17}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Network Function}{17}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Identification of flow}{17}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Chaining of Network Functions}{18}{subsection.4.1.3}
+\contentsline {chapter}{\numberline {5}実装}{20}{chapter.5}
+\contentsline {section}{\numberline {5.1}Implementation of NF chaining in kernel}{20}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Environment of implementation}{20}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Detailed structure of table}{20}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Preparation of NF chaining}{21}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Implementation pf NF chaining mechanism}{24}{subsection.5.1.4}
+\contentsline {subsection}{\numberline {5.1.5}Implementation of Network Functions}{24}{subsection.5.1.5}
+\contentsline {chapter}{\numberline {6}評価・考察}{27}{chapter.6}
+\contentsline {subsection}{\numberline {6.0.1}Evaluation environment}{27}{subsection.6.0.1}
+\contentsline {subsection}{\numberline {6.0.2}NF chaining performance}{27}{subsection.6.0.2}
+\contentsline {subsection}{\numberline {6.0.3}Evaluation of resource consumption}{29}{subsection.6.0.3}
+\contentsline {subsection}{\numberline {6.0.4}Evaluation of NF chaining at high traffic rate}{30}{subsection.6.0.4}
+\contentsline {chapter}{\numberline {7}結論}{31}{chapter.7}
+\contentsline {section}{\numberline {7.1}Summary}{31}{section.7.1}
+\contentsline {section}{\numberline {7.2}Future work}{31}{section.7.2}
+\contentsline {chapter}{\numberline {}謝辞}{32}{chapter*.4}
+\contentsline {chapter}{\hbox to\@lnumwidth {\hfil }参考文献}{33}{chapter*.5}

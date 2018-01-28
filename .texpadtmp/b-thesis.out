@@ -1,0 +1,50 @@
+\BOOKMARK [0][-]{chapter.1}{1 序論}{}% 1
+\BOOKMARK [1][-]{section.1.1}{1.1 Network Function Chaining Infrastructure based on Virtualization Technologies}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{1.1.1 Network Function Virtualization}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{1.1.2 Advantage of VM-based/Container-based NFV}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.3}{1.1.3 Disadvantage of VM-based/Docker-based NFV}{section.1.1}% 5
+\BOOKMARK [2][-]{subsection.1.1.4}{1.1.4 Packet forwarding: VM-based NFV node}{section.1.1}% 6
+\BOOKMARK [2][-]{subsection.1.1.5}{1.1.5 Packet forwarding: Container-based NFV}{section.1.1}% 7
+\BOOKMARK [1][-]{section.1.2}{1.2 Overhead of NFCI based on Virtualization Technologies}{chapter.1}% 8
+\BOOKMARK [2][-]{subsection.1.2.1}{1.2.1 Memory copy}{section.1.2}% 9
+\BOOKMARK [2][-]{subsection.1.2.2}{1.2.2 Resource Consumption}{section.1.2}% 10
+\BOOKMARK [1][-]{section.1.3}{1.3 Proposal: Lightweight NFC mechanism in Linux Kernel}{chapter.1}% 11
+\BOOKMARK [2][-]{subsection.1.3.1}{1.3.1 Structure of the paper}{section.1.3}% 12
+\BOOKMARK [0][-]{chapter.2}{2 関連研究}{}% 13
+\BOOKMARK [1][-]{section.2.1}{2.1 ETSI \(European Telecommunications Standards Institute\)}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.2}{2.2 OPNFV \204 Open Platform for NFV}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.2.1}{2.2.1 OPNFV: Architecture}{section.2.2}% 16
+\BOOKMARK [2][-]{subsection.2.2.2}{2.2.2 Disadvantages of OPNFV}{section.2.2}% 17
+\BOOKMARK [0][-]{chapter.3}{3 Overview}{}% 18
+\BOOKMARK [1][-]{section.3.1}{3.1 Necessity of in-kernel NF chaining}{chapter.3}% 19
+\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Categorization of Network Functions}{section.3.1}% 20
+\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Example of Network Functions and its realizability in kernel}{section.3.1}% 21
+\BOOKMARK [1][-]{section.3.2}{3.2 The role of Kernel-based NFCI node in WAN}{chapter.3}% 22
+\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 The structure of WAN and the position of Kernel-based NFCI node}{section.3.2}% 23
+\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 Placement of Network Function}{section.3.2}% 24
+\BOOKMARK [2][-]{subsection.3.2.3}{3.2.3 Scope of the paper}{section.3.2}% 25
+\BOOKMARK [0][-]{chapter.4}{4 Kernel-based NFCI Architecture}{}% 26
+\BOOKMARK [1][-]{subsection.4.0.1}{4.0.1 Netfilter: Overview}{chapter.4}% 27
+\BOOKMARK [2][-]{subsection.4.0.2}{4.0.2 Netfilter: Table}{subsection.4.0.1}% 28
+\BOOKMARK [2][-]{subsection.4.0.3}{4.0.3 Netfilter: Rule and Target}{subsection.4.0.1}% 29
+\BOOKMARK [1][-]{section.4.1}{4.1 Kernel-based NFV architecture}{chapter.4}% 30
+\BOOKMARK [2][-]{subsection.4.1.1}{4.1.1 Network Function}{section.4.1}% 31
+\BOOKMARK [2][-]{subsection.4.1.2}{4.1.2 Identification of flow}{section.4.1}% 32
+\BOOKMARK [2][-]{subsection.4.1.3}{4.1.3 Chaining of Network Functions}{section.4.1}% 33
+\BOOKMARK [0][-]{chapter.5}{5 実装}{}% 34
+\BOOKMARK [1][-]{section.5.1}{5.1 Implementation of NF chaining in kernel}{chapter.5}% 35
+\BOOKMARK [2][-]{subsection.5.1.1}{5.1.1 Environment of implementation}{section.5.1}% 36
+\BOOKMARK [2][-]{subsection.5.1.2}{5.1.2 Detailed structure of table}{section.5.1}% 37
+\BOOKMARK [2][-]{subsection.5.1.3}{5.1.3 Preparation of NF chaining}{section.5.1}% 38
+\BOOKMARK [2][-]{subsection.5.1.4}{5.1.4 Implementation pf NF chaining mechanism}{section.5.1}% 39
+\BOOKMARK [2][-]{subsection.5.1.5}{5.1.5 Implementation of Network Functions}{section.5.1}% 40
+\BOOKMARK [0][-]{chapter.6}{6 評価・考察}{}% 41
+\BOOKMARK [1][-]{subsection.6.0.1}{6.0.1 Evaluation environment}{chapter.6}% 42
+\BOOKMARK [2][-]{subsection.6.0.2}{6.0.2 NF chaining performance}{subsection.6.0.1}% 43
+\BOOKMARK [2][-]{subsection.6.0.3}{6.0.3 Evaluation of resource consumption}{subsection.6.0.1}% 44
+\BOOKMARK [2][-]{subsection.6.0.4}{6.0.4 Evaluation of NF chaining at high traffic rate}{subsection.6.0.1}% 45
+\BOOKMARK [0][-]{chapter.7}{7 結論}{}% 46
+\BOOKMARK [1][-]{section.7.1}{7.1 Summary}{chapter.7}% 47
+\BOOKMARK [1][-]{section.7.2}{7.2 Future work}{chapter.7}% 48
+\BOOKMARK [0][-]{chapter*.4}{ 謝辞}{}% 49
+\BOOKMARK [0][-]{chapter*.5}{ 参考文献}{}% 50
