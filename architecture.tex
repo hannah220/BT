@@ -11,15 +11,15 @@ The design of the Kernel-based NFCI is shown in Figure \ref{fig: design}. All th
 
 Kernel-based NFCI has three main components. One is the identification of flow. The second is chaining of NFs, the system that enables packets to be processed by NFs in order. And the last is the NFs themselves. Any kind of NF consists of one kernel module or more. The NF chaining mechanism takes place in the PRE\_ROUTING hook which locates between hardware and routing subsystem in the network stack, which is called here chaining point. 
 
-\subsection{Network Function}
+\section{Network Function}
 Any installed kernel modules exist in the same memory region as kernel so the functions in the modules can be seen from other modules and from kernel. This is why it is possible to call functions in kernel modules from network stack. Normally a NF consists of several kernel modules. And in this case, the very first function among kernel modules should be registered somewhere in the kernel and the subsequent functions in other kernel modules will be called in order. 
 
-\subsection{Identification of flow}
+\section{Identification of Flow}
 In the kernel-based NFV host, sets of NF chain can be registered. When a network node participates in NF chaining, it is likely that many flows comes in and out. Not all the flows are to be processed by a single NF chain but only specific flows should pass its designated NF chains. So a mechanism is needed to specify which kind of flow should be treated by a chain of NFs in the host. For example in OPNFV, OVS is used to direct flows to the right NFs which are in VMs. OVS employs OpenFlow which can set a very detailed rules using VLAN tag, incoming / outgoing port, etc. Kernel-based NFV distinguishes flows in granularity of five tuples. Five tuples represent source / destination IP address, source / destination port number and the transport protocol. 
 
 The identification of flow in 5-tuple is implemented using Filter table. As explained in Sec. 4.1.2, Filter table carries out filtering by setting rule and verdict of NF\_DROP or NF\_ACCEPT. Instead of setting verdict in the target, pointer to the list head of chained NFs is registered. 
 
-\subsection{Chaining of Network Functions}
+\section{Chaining of Network Functions}
 This mechanism uses Doubly Linked List (DLL) to implement NF chaining. DLL is a list that contains links to next and previous nodes. Unlike singly linked lists traversal is only one way, DLL allows traversal in both ways. 
 Figure \ref{fig: dll} shows the framework of NF chain realized with DLL. DDL is chosen since adding and removing node can be done easily. A NF is represented by a node of gray box. A node is a {\tt nf\_target} struct which has the following members: 
 \begin{itemize}

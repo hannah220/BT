@@ -1,6 +1,6 @@
 The proposing Kernel-based NFCI makes use of existing Netfilter subsystem in Linux kernel. In this chapter detailed description about this Netfilter subsystem is given. 
 
-\subsection{Netfilter: Overview}
+\section{Netfilter: Overview}
 Netfilter is a software inside the Linux 2.4.x and later kernel series, which enables packet filtering and packet mangling. It is a set of hooks that are placed in several stages in network stack and in each hook multiple kernel modules can be registered. Each of the kernel module will work as a NF, such as Firewall and NAPT. 
 Figure \ref{fig: netfilter_system} shows the network stack and five netfilter hooks embedded inside it. The bottom is the device driver and the more it goes up the network layer does as well to reach the transport protocol (Layer 4). As packets progress through the stack, the registered kernel modules in the hook will be triggered. 
 The following hooks are located in meaningful positions in the stack:
@@ -21,7 +21,7 @@ The following hooks are located in meaningful positions in the stack:
 
 Kernel modules that are registered in a hook according to the its priority. The lower the priority value is, the earlier it gets executed. Each kernel module will return a verdict indicating the result of the process. 
 
-\subsection{Netfilter: Table}
+\section{Netfilter: Table}
 Netfilter supports Firewall, NAPT and so on. Each of these NF has its own "Table" to organize the rules. Rule is used to specify which kind of flow is targeted for the specific action, such as filtering in case of Firewall. In each netfilter hook, the following tables can be registered. 
 
 \begin{table}[tb]
@@ -52,7 +52,7 @@ Netfilter supports Firewall, NAPT and so on. Each of these NF has its own "Table
 	\item Filter Table : The filter table is used to make decision about whether to allow packet to continue to its destination or drop the packet. Unlike the above tables, when a rule matches only a verdict whether to accept or drop is returned without doing any specific process. This is normally used for Firewall for filtering mechanism. 
 \end{itemize}
 
-\subsection{Netfilter: Rule and Target}
+\section{Netfilter: Rule and Target}
 In each table a sequence of rules are installed, which forms a "chain of rules". The rules will be evaluated from top to down in the chain. A rule is registered with a target component, which has function or verdict. Any target returns integer value named verdict which determines how the packet will be handled.
  The verdict value XT\_CONTINUE and XT\_RETURN are special. When the verdict is XT\_CONTINUE the next rule in the chain is further evaluated. And XT\_RETURN means to jump to another rule chain. The other main verdicts are NF\_ACCEPT, NF\_DROP. NF\_DROP tells to discard the packet. NF\_ACCEPT means that the traversal of rule chain terminates in the table and the packet will be further processed by the next table if any or return from the netfilter system to the network stack. 
  

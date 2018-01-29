@@ -1,4 +1,4 @@
-\section{Necessity of in-kernel NF chaining}
+\section{Necessity of in-kernel NF Chaining}
 The original Internet protocol suite TCP/IP was standardized in the 1970s and the TCP/IP stack was first implemented in BSD OS in the early 1980s. Since then lots of efforts were made to implement this protocol in other platform like Linux. At first mutual communication via the Internet was only leveraged in military and commercial use. But as the Internet grew bigger and network application such as file sharing among distant entities gained popularity, the networking function by TCP/IP became a "commodity service". This means that the availability of this protocol is demanded by the majority of normal users and therefore it became an essential component in the kernel. 
 
  38 years after the first implementation of network stack in kernel (BSD), demands against networking function has also progressed. Kernel now supports not only TCP/IP but also a lot of other protocols and simple per packet network function such as Firewall or NAT. They are implemented by Netfilter subsystem in Linux kernel. One of the recent trends in network industry is, as mentioned, Network Function Chaining and this is realized either by traditional proprietary hardware or virtualization technology. I believe that this NF chaining system should be implemented in the kernel of general purpose OS, likewise network stack was integrated in kernel decades ago. Even though there are certain number of advanced NFs that are required by network nodes and certain users, the only way to run them (except buying expensive dedicated hardware) is with the help of virtualization technology, which causes heavy resource consumption to make virtualized instances and unnecessary memory copy to apply functions to packets. That is why I propose NF chaining mechanism in the kernel space. The mechanism aims to realize the chaining of NFs that are not executable by the existing Netfilter subsystem in the Linux kernel. 
@@ -87,10 +87,7 @@ Figure \ref{fig: overview_2} depicts the case of latter NFs placement. These NFs
 	\label{fig: NSH}
 \end{figure*}
 
-\begin{comment}
-	\subsection{Scope of the paper}
-This thesis focuses on the data plane of NF chaining rather than control plane.  Specifically, NF chaining mechanism for per packet process in a single host is implemented. The system of reassembling IP packets to acquire the original payload for NF such ALG remains as future work. 
-\end{comment}
+
 
 
 

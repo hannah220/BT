@@ -1,10 +1,10 @@
-\section{Implementation of NF chaining in kernel}
+\section{Implementation of NF Chaining in Kernel}
 I implemented a prototype of per packet NF chaining mechanism in the kernel space. This includes identification of flow, NF chaining system and implementation of two NFs, DoS attack denial and DNAT. 
 
-\subsection{Environment of implementation}
+\subsection{Environment of Implementation}
 For the implementation, VM is used running atop hypervisor. Ubuntu 16.04 LTS (64bit) is used as VM's OS. 
 
-\subsection{Detailed structure of table}
+\subsection{Detailed Structure of Table}
 As explained in Sec. 4.2.2, identification of flow is done with the help of Filter table. Usually the daemon in the user-space takes the command for iptables and set the specified rule in the kernel space. Instead of this, I made a kernel module that is responsible for inserting rule in the Filter table. 
 
 Table is a contiguous memory region where rules and targets are inserted. Every network namespace (ns) has its own tables. Specifically, struct net that represents ns, has struct netns\_ipv4 member, which contains pointers to each table. All tables (from Filter to NAT table) are the same struct xt\_table. 
@@ -24,7 +24,7 @@ The last member {\tt elems[0]} points to the top of protocol specific rules. A s
 
 Struct {\tt ipt\_entry\_target} is where the information of action (target) against rule match is inserted. Inside {\tt ipt\_entry\_target}, there is a union containing user struct and kernel struct. The former is used when the target has only verdict and no process to be executed. The latter is used when the target has function to  execute. Specifically, the {\tt xt\_target} struct member contains the pointer to the function. In order to realize NF chaining, head of the chain struct {\tt list\_head} is inserted as the last member. So the first two structs in {\tt ipt\_entry\_target} are ignored and only the last struct {\tt list\_head} member is used in case of NF chaining. 
 
-\subsection{Preparation of NF chaining} 
+\subsection{Preparation of NF Chaining} 
 There are two kernel modules that are responsible for preparing the NF chaining: The first {\tt create\_nfc} module makes NF chains. The second is responsible for setting up rule in Filter table for a chain. Especially struct {\tt ipt\_entry} (in Fig. \ref{fig: imp2}) and struct {\tt ipt\_entry\_target} (in Fig. \ref{fig: imp3}) are used to set rule. 
 
 Before {\tt create\_nfc} module makes a NF chain, kernel modules that forms each NF should be installed in advance. The following information must be provided from the NF : Pointer to the first function of the NF, its priority value, the name of the NF and identification number o f the desired chain (CI). According to this information {\tt create\_nfc} module first of all makes a struct {\tt nf\_target} as described in Figure \ref{fig: imp1}. The provided function pointer is registered in the second member in struct {\tt nf\_target} and so on. If CI is new, a new NF chain is created. Specifically, a new struct {\tt list\_head} is allocated and the {\tt nf\_target} struct is inserted as next node, forming a DLL. If CI already exist, the NF should be inserted in the appropriate existing chain. The priority value in the chain is examined and the the {\tt nf\_target} struct is inserted before the node that has higher priority value.
@@ -129,7 +129,7 @@ struct ipt_entry_match {
 	\label{fig: imp4}
 \end{figure}
 
-\subsection{Implementation of NF chaining mechanism}
+\subsection{Implementation of NF Chaining Mechanism}
 The PRE\_ROUTING hook is triggered at the end of {\tt ip\_rcv} function (in net/ipv4/ip
 \_input.c) in the network stack. The hook eventually calls {\tt ipt\_do\_table} function passing SKB pointer, pointer to struct {\tt xt\_table} as Filter table as arguments. This {\tt ipt\_do\_table} function is in charge of screening rules in the table and taking action specified by the  target. In addition to performing default target process, I added code to practice NF chaining. 
 

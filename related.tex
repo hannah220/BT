@@ -63,7 +63,11 @@ There are following common elements in Flurries and in my Kernel-based NFCI.
 	\item Microservice: In Flurries, a NF is fragmented to pieces of a single service that work in containers. In Kernel-based NFCI, NFs are implemented with kernel modules and a NF can consist of several modules. This also makes it possible to break down a NF into several services (kernel modules) and share the common service among NFs to reduce redundancy in NFs. 
 \end{itemize}
 
-Big difference between Flurries and Kernel-based NFCI is how zero copy is realized. Flurries bypasses the network stack by using DPDK to directly access DMA, whereas Kernel-based NFCI realize zero copy by operating in the network stack. However using DPDK may cause memory space violation because of its future that user space process can affect NIC's DMA. For such reason I propose a secure NF chaining infrastructure in kernel without using bypass technology like DPDK. 
+Big difference between Flurries and Kernel-based NFCI is how zero copy is realized. Flurries bypasses the network stack by using DPDK to directly access DMA, whereas Kernel-based NFCI realize zero copy by operating in the network stack. 
+
+Although problem of memory violation arises when using DPDK to bypass the OS. The NF Manager uses DPDK Packet Distributor library to fetch packets and store them in a shared memory. And all the containers can access to this data packet even though there are certain containers that should not be allowed to see them. Originally applications in the user space cannot see data that are destined to other applications, which is realized by socket API. However if the kernel stack is bypass it is impossible to obtain security provided by the kernel. This is a harmful effect caused by raising the function of memory management to user space which kernel should originally control. This is not limited to Flurries but to all the NFV platform that using bypassing technology for better throughput. 
+
+For such reason I propose a secure NF chaining infrastructure in kernel without using bypass technology like DPDK. 
 
 
 

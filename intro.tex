@@ -6,16 +6,9 @@ Implementation of NF in software is realized by virtualization technology. This 
 
 There are two main advantages in the virtualization technology. The first advantage of using them is the portability of NFs. Any NF that runs on a VM or container instance can operate on any host that supports the virtualization technologies. In case of KVM-based\cite{KVM} VM, a configuration file written by XML file and image file (raw or qcow format) and in case of Docker-based container, with Dockerfile (configuration file) and Docker image (disk image file) the same instance can be build. The second advantage is that the isolation is provided between instances (VMs or Containers). This enables the CPU and memory resources to be allocated to the instance as required. And the instance cannot take up more resources than allocated. 
 
-Because of those advantages, VM and container are used very commonly in NFV. A host can have multiple NFs (VMs or containers), and the traffic between NFs are exchangeable with software switches. Combined with software-defined network (SDN), traffic can be managed to go through specific NFs in other hosts. Either by chaining NFs in a single host or between several hosts, a network service is created. 
+Because of those advantages, VM and container are used very commonly in NFV. A host can have multiple NFs (VMs or containers), and the traffic between NFs are exchangeable with software switches. Combined with software-defined network (SDN), traffic can be managed to go through specific NFs in other hosts. Either by chaining NFs in a single host or between several hosts, a network service is created. This thesis proposes a novel NF chaining mechanism inside of the kernel in a single host. 
 
-<In this paper, I propose a novel NF chaining mechanism inside of the kernel in a single host. >
-
-\begin{comment}
-	\subsection{Disadvantage of VM-based/Docker-based NFV}
-The main disadvantage is the packet forwarding: Each packet must be transmitted between NIC and instances (VM or Container) causing throughput bottleneck. I describe the detail of packet forwarding in VM-based and container-based technology, respectively in section 1.1.4 and 1.1.5. 
-\end{comment}
-
-\subsection{Packet forwarding in virtualized nodes}
+\subsection{Packet Forwarding in Virtualized Nodes}
 In this chapter the detail of packet forwarding between the NIC of host and virtualized nodes like VM or container is explained. 
 
 In case of VM-based NFV, packet forwarding consists of three architectures, packet I/O, virtual network I/O and virtual switch. 
@@ -76,7 +69,7 @@ NF consists of one or more kernel modules. In order to integrate NF in network s
 
 As Figure \ref{fig: path_kernel} shows, in my kernel-based NFCI node, NFs in kernel can directly access to the SKB because they are all in the same memory region. Hence there is no need of memory copy. When a NF cannot be completely executed in the kernel, only the simple function is placed in the kernel and scheduled by the well-tuned scheduling algorithm in Linux kernel, e.g., Completely Fair Scheduling (CFS)\cite{CFS}. The rest must be put in user space by a virtualization technology to be targeted for resource isolation. Because only complicated function is virtualized, overall resource consumption should be also decreased significantly. 
 
-We think that certain amount of NFs consists of fairly simple functions, e.g., hash-based signature comparison and counting the number of specific flows,  and lots of them are feasible in the kernel. By providing a chaining mechanism for lightweight NFs in the kernel, overheads discussed so far will be largely eliminated. 
+Certain amount of NFs consists of fairly simple functions, e.g., hash-based signature comparison and counting the number of specific flows,  and lots of them are feasible in the kernel. By providing a chaining mechanism for lightweight NFs in the kernel, overheads discussed so far will be largely eliminated. 
 
 The structure of the thesis is as follows. Related work is introduced in Chapter 2. In Chapter 3, the overall picture of the Kernel-based NFCI is described. Chapter 4 describes the architecture of the Kernel-based NFCI. In Chapter 5, the detail of the implementation is explained. Results of the evaluations are shown in Chapter 5. And finally, I conclude this thesis in Chapter 6. 
 

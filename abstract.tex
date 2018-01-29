@@ -2,7 +2,7 @@
 \large
 	Traditionally telecommunication networks have managed proprietary hardware to provide network functions (NF) such as P-GW and S-GW. To add flexibility of deploying NF, Network Function Virtualization (NFV) has emerged. NFV leverages virtualization technologies: VM-based  or container-based virtualization. However virtualization involves overhead in terms of memory copy in forwarding data and resource consumption to make instances. 
 	
-	To reduce the above overheads, I propose lightweight NF chaining mechanism in Linux. The overall idea is that simple NFs are  chained in the kernel and only complicated NFs are placed in the user space, thus minimizing the cost of virtualization. NFs in kernel consist of kernel modules. A NF chain is a list that has nodes containing functions in the kernel. NFs can directly access the packet with pointer because they are all in the same memory region. 
+	To reduce the above overheads, this thesis propose lightweight NF chaining mechanism in Linux. The overall idea is that simple NFs are  chained in the kernel and only complicated NFs are placed in the user space, thus minimizing the cost of virtualization. NFs in kernel consist of kernel modules. A NF chain is a list that has nodes containing functions in the kernel. NFs can directly access the packet with pointer because they are all in the same memory region. 
 	
 	Chaining mechanism is implemented in the network stack before the routing subsystem. Only specified flows are processed by their corresponding NF chains. In addition to chaining mechanism, DoS attack detection/prevention and destination network address translation (DNAT), are implemented. 
 	

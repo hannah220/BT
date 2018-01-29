@@ -1,5 +1,5 @@
 In this chapter, evaluation for Kernel-based NFCI is described. 
-\section{Evaluation environment}
+\section{Evaluation Environment}
 Evaluation environment consists of hypervisor and three VMs on top of it. On one of the VM runs Kernel-based NFCI and on the others runs generic kernel. Tables \ref{tbl: spec1} and \ref{tbl: spec2} shows the machine specifications of hypervisor and VM respectively. Two experiments will be conducted in this environment.  
 
 \begin{table}
@@ -50,7 +50,7 @@ Evaluation environment consists of hypervisor and three VMs on top of it. On one
 	\label{fig: result1}
 \end{figure*}
 
-\section{NF chaining performance}
+\section{NF Chaining Performance}
 To evaluate the performance of NF chaining, the following Experiment 1 is conducted. On VM1, Kernel-based NFCI executes chaining of two NFs, DoS Attack Denial (DAD) and DNAT. 
 
 DAD counts the number of packets per flow. If in the previous 10 seconds the counter exceeds the threshold, all the packet in the flow will be dropped for the next 10 seconds. For this experiment the threshold of any flow is set to be 100Mbps. 
@@ -63,7 +63,7 @@ The throughputs at VM2 and VM3 are shown in Figure \ref{fig: result1}.
 Since both of the throughputs have similar value, it proves that the DNAT is working properly to split two flows to VM2 and VM3. The last 10 seconds both of flows have 0Mbps throughput. This is because from 10 to 20 seconds the traffic is exceeding 100Mbps and DAD starts dropping all the packet from 20s. 
 
 
-\section{Evaluation of resource consumption}
+\section{Evaluation of Resource Consumption}
 Resource consumption when NF chaining is running to process traffic of 1Gbps $\times 2 $ is evaluated. Similar to Experiment 1, two UDP flows are sent to VM1 and split to VM2 and VM3 by DNAT. The difference is that the the two flow is transmitted at rate of 1Gbps for only 10 seconds. So the first NF DAD will work only as packet counting and blocking of packets will not triggered because there will be not packets in the next 10 seconds. Values of memory usage and CPU utilization are measured by vmstat command. 
 
 When idle (no traffic processing is running), average memory usage was 766,664 Kbytes. When NF chaining at rate of 1Gbps $\times 2 $ is taking place, there were only average 20Kbytes of increase. CPU utilization showed 0\% in both case of idle and processing. This indicates that NF chaining requires little amount of CPU processing. To get detailed information about used CPU time, I used dynamic tracing tool "BCC". Especially, a program that summarizes task on-CPU time as histogram is used. This shows how long tasks spent on the CPU before being descheduled. As shown in \ref{fig: cpudist}, the number of tasks that are on-CPU for 2048-4095 usecs is the highest in both cases when processing and idle. And the number of tasks when processing is roughly twice as high as when idle. In summary, it costs about twice the CPU time for processing but the overall CPU utilization still remains 0\%. 
