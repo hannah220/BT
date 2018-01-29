@@ -24,7 +24,7 @@
 \contentsline {figure}{\numberline {6.4}{\ignorespaces Struct ipt\_entry\_target\relax }}{26}{figure.caption.20}
 \contentsline {figure}{\numberline {6.5}{\ignorespaces Struct ipt\_entry\_match\relax }}{26}{figure.caption.21}
 \contentsline {figure}{\numberline {6.6}{\ignorespaces The NF chaining mechanism in ipt\_do\_table\relax }}{28}{figure.caption.22}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Implementation of nf\_dad\_func function for DDos Attack Detection\relax }}{29}{figure.caption.23}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Implementation of nf\_dad\_func function for DoS Attack Detection\relax }}{29}{figure.caption.23}
 \addvspace {10pt}
 \contentsline {figure}{\numberline {7.1}{\ignorespaces Direction of flows in experiment1\relax }}{31}{figure.caption.26}
 \contentsline {figure}{\numberline {7.2}{\ignorespaces Throughput at VM2 and VM3\relax }}{31}{figure.caption.27}

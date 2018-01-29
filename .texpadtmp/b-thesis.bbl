@@ -96,6 +96,15 @@ D.~K. Rensin, \emph{Kubernetes - Scheduling the Future at Cloud Scale}, 1005
   \url{http://www.oreilly.com/webops-perf/free/kubernetes.csp}
 \BIBentrySTDinterwordspacing
 
+\bibitem{VALE}
+\BIBentryALTinterwordspacing
+L.~Rizzo and G.~Lettieri, ``Vale, a switched ethernet for virtual machines,''
+  in \emph{Proceedings of the 8th International Conference on Emerging
+  Networking Experiments and Technologies}, ser. CoNEXT '12.\hskip 1em plus
+  0.5em minus 0.4em\relax New York, NY, USA: ACM, 2012, pp. 61--72. [Online].
+  Available: \url{http://doi.acm.org/10.1145/2413176.2413185}
+\BIBentrySTDinterwordspacing
+
 \bibitem{CFS}
 \BIBentryALTinterwordspacing
 {CFS} {S}cheduler. [Online]. Available:
