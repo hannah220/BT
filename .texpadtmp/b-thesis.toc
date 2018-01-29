@@ -11,34 +11,35 @@
 \contentsline {section}{\numberline {2.2}OPNFV --- Open Platform for NFV}{5}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}OPNFV: Architecture}{5}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Disadvantages of OPNFV}{7}{subsection.2.2.2}
-\contentsline {chapter}{\numberline {3}Overview of Targeted Network Functions}{8}{chapter.3}
-\contentsline {section}{\numberline {3.1}Necessity of in-kernel NF chaining}{8}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Categorization of Network Functions}{8}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Example of Network Functions and its Realizability in Kernel}{9}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}NFC in WAN Environment}{10}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Assumed Environment and Usage Model}{10}{subsection.3.2.1}
-\contentsline {chapter}{\numberline {4}Netfilter Subsystem in Linux Kernel}{14}{chapter.4}
-\contentsline {subsection}{\numberline {4.0.1}Netfilter: Overview}{14}{subsection.4.0.1}
-\contentsline {subsection}{\numberline {4.0.2}Netfilter: Table}{14}{subsection.4.0.2}
-\contentsline {subsection}{\numberline {4.0.3}Netfilter: Rule and Target}{16}{subsection.4.0.3}
-\contentsline {chapter}{\numberline {5}Kernel-based NFCI Architecture}{18}{chapter.5}
-\contentsline {subsection}{\numberline {5.0.1}Network Function}{18}{subsection.5.0.1}
-\contentsline {subsection}{\numberline {5.0.2}Identification of flow}{18}{subsection.5.0.2}
-\contentsline {subsection}{\numberline {5.0.3}Chaining of Network Functions}{19}{subsection.5.0.3}
-\contentsline {chapter}{\numberline {6}実装}{21}{chapter.6}
-\contentsline {section}{\numberline {6.1}Implementation of NF chaining in kernel}{21}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Environment of implementation}{21}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Detailed structure of table}{21}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Preparation of NF chaining}{22}{subsection.6.1.3}
-\contentsline {subsection}{\numberline {6.1.4}Implementation of NF chaining mechanism}{25}{subsection.6.1.4}
-\contentsline {subsection}{\numberline {6.1.5}Implementation of Network Functions}{25}{subsection.6.1.5}
-\contentsline {chapter}{\numberline {7}評価・考察}{28}{chapter.7}
-\contentsline {section}{\numberline {7.1}Evaluation environment}{28}{section.7.1}
-\contentsline {section}{\numberline {7.2}NF chaining performance}{28}{section.7.2}
-\contentsline {section}{\numberline {7.3}Evaluation of resource consumption}{30}{section.7.3}
-\contentsline {section}{\numberline {7.4}Evaluation of NF chaining at high traffic rate}{30}{section.7.4}
-\contentsline {chapter}{\numberline {8}結論}{32}{chapter.8}
-\contentsline {section}{\numberline {8.1}Summary}{32}{section.8.1}
-\contentsline {section}{\numberline {8.2}Future work}{32}{section.8.2}
-\contentsline {chapter}{\numberline {}謝辞}{33}{chapter*.31}
-\contentsline {chapter}{\hbox to\@lnumwidth {\hfil }Reference}{34}{chapter*.32}
+\contentsline {section}{\numberline {2.3}Flurries: Countless Fine-Grained NFs for Flexible Per-Flow Customization}{7}{section.2.3}
+\contentsline {chapter}{\numberline {3}Overview of Targeted Network Functions}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}Necessity of in-kernel NF chaining}{9}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Categorization of Network Functions}{9}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Example of Network Functions and its Realizability in Kernel}{10}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}NFC in WAN Environment}{11}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Assumed Environment and Usage Model}{11}{subsection.3.2.1}
+\contentsline {chapter}{\numberline {4}Netfilter Subsystem in Linux Kernel}{15}{chapter.4}
+\contentsline {subsection}{\numberline {4.0.1}Netfilter: Overview}{15}{subsection.4.0.1}
+\contentsline {subsection}{\numberline {4.0.2}Netfilter: Table}{15}{subsection.4.0.2}
+\contentsline {subsection}{\numberline {4.0.3}Netfilter: Rule and Target}{17}{subsection.4.0.3}
+\contentsline {chapter}{\numberline {5}Kernel-based NFCI Architecture}{19}{chapter.5}
+\contentsline {subsection}{\numberline {5.0.1}Network Function}{19}{subsection.5.0.1}
+\contentsline {subsection}{\numberline {5.0.2}Identification of flow}{19}{subsection.5.0.2}
+\contentsline {subsection}{\numberline {5.0.3}Chaining of Network Functions}{20}{subsection.5.0.3}
+\contentsline {chapter}{\numberline {6}実装}{22}{chapter.6}
+\contentsline {section}{\numberline {6.1}Implementation of NF chaining in kernel}{22}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Environment of implementation}{22}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Detailed structure of table}{22}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Preparation of NF chaining}{23}{subsection.6.1.3}
+\contentsline {subsection}{\numberline {6.1.4}Implementation of NF chaining mechanism}{26}{subsection.6.1.4}
+\contentsline {subsection}{\numberline {6.1.5}Implementation of Network Functions}{26}{subsection.6.1.5}
+\contentsline {chapter}{\numberline {7}評価・考察}{29}{chapter.7}
+\contentsline {section}{\numberline {7.1}Evaluation environment}{29}{section.7.1}
+\contentsline {section}{\numberline {7.2}NF chaining performance}{29}{section.7.2}
+\contentsline {section}{\numberline {7.3}Evaluation of resource consumption}{31}{section.7.3}
+\contentsline {section}{\numberline {7.4}Evaluation of NF chaining at high traffic rate}{31}{section.7.4}
+\contentsline {chapter}{\numberline {8}結論}{33}{chapter.8}
+\contentsline {section}{\numberline {8.1}Summary}{33}{section.8.1}
+\contentsline {section}{\numberline {8.2}Future work}{33}{section.8.2}
+\contentsline {chapter}{\numberline {}謝辞}{34}{chapter*.32}
+\contentsline {chapter}{\hbox to\@lnumwidth {\hfil }Reference}{35}{chapter*.33}

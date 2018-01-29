@@ -5,28 +5,29 @@
 \addvspace {10pt}
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Architectural framework of NFV by ETSI.\relax }}{6}{figure.caption.6}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces NFV Forwarding Graph\relax }}{7}{figure.caption.7}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Traffic in Kernel-based NFV node\relax }}{8}{figure.caption.8}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces NF request by user\relax }}{11}{figure.caption.8}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces NF placement by NSP\relax }}{11}{figure.caption.8}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces NSH Architecture\relax }}{13}{figure.caption.9}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces NF request by user\relax }}{12}{figure.caption.9}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces NF placement by NSP\relax }}{12}{figure.caption.9}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces NSH Architecture\relax }}{14}{figure.caption.10}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Netfilter hooks in network stack\relax }}{15}{figure.caption.10}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Ipchains rules and targets\relax }}{17}{figure.caption.12}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Netfilter hooks in network stack\relax }}{16}{figure.caption.11}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Ipchains rules and targets\relax }}{18}{figure.caption.13}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Design of the Kernel-based NFCI.\relax }}{18}{figure.caption.13}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Doubly Linked List with nodes of {\tt nf\_target} struct.\relax }}{19}{figure.caption.14}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Structure of rules and the corresponding NF chain in Filter Table.\relax }}{20}{figure.caption.15}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Design of the Kernel-based NFCI.\relax }}{19}{figure.caption.14}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Doubly Linked List with nodes of {\tt nf\_target} struct.\relax }}{20}{figure.caption.15}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Structure of rules and the corresponding NF chain in Filter Table.\relax }}{21}{figure.caption.16}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Filter Table\relax }}{22}{figure.caption.16}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Struct nf\_target\relax }}{23}{figure.caption.17}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Struct ipt\_entry\relax }}{23}{figure.caption.18}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Struct ipt\_entry\_target\relax }}{24}{figure.caption.19}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Struct ipt\_entry\_match\relax }}{24}{figure.caption.20}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces The NF chaining mechanism in ipt\_do\_table\relax }}{26}{figure.caption.21}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Implementation of nf\_dad\_func function for DDos Attack Detection\relax }}{27}{figure.caption.22}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Filter Table\relax }}{23}{figure.caption.17}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Struct nf\_target\relax }}{24}{figure.caption.18}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Struct ipt\_entry\relax }}{24}{figure.caption.19}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Struct ipt\_entry\_target\relax }}{25}{figure.caption.20}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Struct ipt\_entry\_match\relax }}{25}{figure.caption.21}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces The NF chaining mechanism in ipt\_do\_table\relax }}{27}{figure.caption.22}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Implementation of nf\_dad\_func function for DDos Attack Detection\relax }}{28}{figure.caption.23}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Direction of flows in experiment1\relax }}{29}{figure.caption.25}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Throughput at VM2 and VM3\relax }}{29}{figure.caption.26}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Histogram of tasks on-CPU time\relax }}{31}{figure.caption.28}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Routing of flows among general OSs\relax }}{31}{figure.caption.29}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Direction of flows in experiment1\relax }}{30}{figure.caption.26}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Throughput at VM2 and VM3\relax }}{30}{figure.caption.27}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Histogram of tasks on-CPU time\relax }}{32}{figure.caption.29}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Routing of flows among general OSs\relax }}{32}{figure.caption.30}
 \addvspace {10pt}
