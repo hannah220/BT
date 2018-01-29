@@ -39,24 +39,31 @@ Although OPNFV is a NFV platform that is widely deployed by enterprise and servi
 		The architecture of OPNFV contains numerous middleware like OpenStack as a cloud controller, OpenDaylight as a SDN controller, KVM as virtual technologies, etc. Each of them are deriving from different project. This makes the architecture to be complicated and thus prone to compiling errors in different environments. 
 	\item Resource consumption \\
 		By allocating virtual instances to each of the VM, it leads to a lot of resource consumption when deploying a large number of VMs. 
-	\item 
+	\item Memory copy \\
+		Delivering packets to NFs causes memory copy because NFs are virtualized instances running in the user space. With heavy traffic this packet forwarding can be the bottleneck to maintain throughput. 
 	\item Scaling problem of OPNFV \\
 		OPNFV uses NFV Forwarding Graph to achieve NF chaining. SDN controller like OpenDaylight installs flow classifier in each NFV node. And OVS in NFV node forwards traffic according to the installed classifier, such as passing packets through NF on its node or transmitting packets to another node. Since a SDN controller is responsible for setting up service chain, it is not realistic to be deployed in wide area network. 
 \end{itemize}
 
 \section{Flurries: Countless Fine-Grained NFs for Flexible Per-Flow Customization} 
-Flurries\cite{Flurries} is a container-based NFV platform designed to support large number of lightweight NFs. This thesis argues that even though SDN enables fine grained routing, this flexibility of flow cannot be extended to network function layer because packets of all flows are aggregated in a queue before processing. Each NF receives packets of many different flows and it is NF's responsibility to divide those packets into flows. This thesis proposes that for each flow a NF should run to provide QoS and service chain functionality per flows at a very fine granularity. To add flexibility, a NF is broken down into pieces of single service, "microservice". In order to run a large number of NFs on a single host, a microservice is realized by a lightweight container. 
+Flurries\cite{flurries} is a container-based NFV platform designed to support large number of lightweight NFs. This thesis argues that even though SDN enables fine grained routing, this flexibility of flow cannot be extended to network function layer because packets of all flows are aggregated in a queue before processing. Each NF receives packets of many different flows and it is NF's responsibility to divide those packets into flows. This thesis proposes that for each flow a NF should run to provide QoS and service chain functionality per flows at a very fine granularity. To add flexibility, a NF is broken down into pieces of single service, "microservice". In order to run a large number of NFs on a single host, a microservice is realized by a lightweight container. 
 
 \begin{figure*}
 	\centering
-	\includegraphics[width=95mm]{pics/flurries1.pdf}
-	\caption{Traffic in Kernel-based NFV node}
-	\label{fig: path_kernel}
+	\includegraphics[width=95mm]{pics/flurries_arc.pdf}
+	\caption{Architecture of Flurries}
+	\label{fig: flurries_arc}
 \end{figure*} 
 
-Flurries's architecture is shown in Figure \ref{fig: flurries_arc.pdf}. Flurries uses DPDK to bypass kernel and directly access DMA\ref{fig:  DMA} (Direct Memory Access) of the NIC. Flurries Manager is the big box in the middle that is responsible for fetching packets from the NIC and forward them to the right containers as marked NF#1, NF#2 and NF#3. When packets arrive at the NIC, the RX threads in the Flurries Manager use DPDK's poll mode driver to read packets into a memory region shared with all NFs. Then the RX thread performs lookup in the Flow Table and if there is a match the packet descriptor is copied into the the NF's receive buffer.  
+Flurries's architecture is shown in Figure \ref{fig: flurries_arc}. Flurries uses DPDK to bypass kernel and directly access DMA\cite{DMA} (Direct Memory Access) of the NIC. Flurries Manager is the big box in the middle that is responsible for fetching packets from the NIC and forward them to the right containers as marked NF\#1, NF\#2 and NF\#3. When packets arrive at the NIC, the RX threads in the Flurries Manager use DPDK's poll mode driver to read packets into a memory region shared with all NFs. Then the RX thread performs lookup in the Flow Table and if there is a match the packet descriptor is copied into the the NF's receive buffer.  
 
+There are following common elements in Flurries and in my Kernel-based NFCI.
+\begin{itemize}
+	\item Zero copy: In Flurries, packets are collected in a shared memory where all the NFs can access so that packets do not need to be copied to NFs for the process. Kernel-based NFCI realizes zero copy as well by chaining NFs inside the kernel where only single memory region exist. 
+	\item Microservice: In Flurries, a NF is fragmented to pieces of a single service that work in containers. In Kernel-based NFCI, NFs are implemented with kernel modules and a NF can consist of several modules. This also makes it possible to break down a NF into several services (kernel modules) and share the common service among NFs to reduce redundancy in NFs. 
+\end{itemize}
 
+Big difference between Flurries and Kernel-based NFCI is how zero copy is realized. Flurries bypasses the network stack by using DPDK to directly access DMA, whereas Kernel-based NFCI realize zero copy by operating in the network stack. However using DPDK may cause memory space violation because of its future that user space process can affect NIC's DMA. For such reason I propose a secure NF chaining infrastructure in kernel without using bypass technology like DPDK. 
 
 
 

@@ -116,6 +116,22 @@ Open{D}aylight {P}roject. [Online]. Available:
   \url{https://www.sdxcentral.com/projects/opendaylight-project/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{flurries}
+\BIBentryALTinterwordspacing
+W.~Zhang, J.~Hwang, S.~Rajagopalan, K.~Ramakrishnan, and T.~Wood, ``Flurries:
+  Countless fine-grained nfs for flexible per-flow customization,'' in
+  \emph{Proceedings of the 12th International on Conference on Emerging
+  Networking EXperiments and Technologies}, ser. CoNEXT '16.\hskip 1em plus
+  0.5em minus 0.4em\relax New York, NY, USA: ACM, 2016, pp. 3--17. [Online].
+  Available: \url{http://doi.acm.org/10.1145/2999572.2999602}
+\BIBentrySTDinterwordspacing
+
+\bibitem{DMA}
+\BIBentryALTinterwordspacing
+``Dma fundamentals.'' [Online]. Available:
+  \url{http://cires1.colorado.edu/jimenez-group/QAMSResources/Docs/DMAFundamentals.pdf}
+\BIBentrySTDinterwordspacing
+
 \bibitem{NSH}
 \BIBentryALTinterwordspacing
 P.~Quinn, U.~Elzur, and C.~Pignataro, ``{Network Service Header (NSH)},'' RFC
