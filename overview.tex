@@ -46,7 +46,7 @@ In WAN, there are companies as Network Service Provider (NSP) and Internet Servi
 
 Depending on the kind of the NF, the place where the NF should be loaded is determined. For instance security related NF such as firewall and  WAF should run in the requesting user node. On the other hand, TE related NFs, load balancer, and so on are placed by NSP on network nodes. In both cases, a NF that is sent from the NSP is source code of kernel modules that makes up the NF. The kernel modules will be then compiled in the environment of the installed node and start to function. Figures \ref{fig: overview_1} and \ref{fig: overview_2} show the placement of the two kinds of NFs in WAN. It is assumed that Network nodes and user nodes are operating on Kernel-based NFCI. 
 
-\begin{figure}[htbp]
+\begin{figure}[t]
 	\begin{minipage}{0.5\hsize}
 		\begin{center}
 			\includegraphics[width=75mm]{pics/overview_1.pdf}
@@ -71,13 +71,13 @@ Figure \ref{fig: overview_2} depicts the case of latter NFs placement. These NFs
 		\item Loading on shortest path\\
 			The former way is easier to do in terms of no need of modifying the path. But it is not hard to imagine that this will leads to redundant placement of NFs in network nodes. As each time a new traffic flow has to be processed by NFs, it is likely that the same NFs will be placed in different network nodes. 
 		\item NSH\\
-			NSH is added in each packet header as an information of designated service function path in a single administrative domain. NSH describes a sequence of service function nodes that the packet must be routed prior to reaching the destination. NSH is inserted between the original packet and outer network encapsulation such as MPLS, VXLAN, etc. Important information is placed in service path header in NSH. It consists of 24 bits of Service Path Identifier (SPI) and 8 bits of Service Index (SI). SPI identifies service function path and SI is an indication of number of processed service function. 
+			NSH is added in each packet header as an information of designated service function path in a single administrative domain. NSH describes a sequence of service function nodes that the packet must be routed prior to reaching the destination. This header is inserted between the original packet and outer network encapsulation such as MPLS, VXLAN, etc. Important information is placed in service path header in NSH. It consists of 24 bits of Service Path Identifier (SPI) and 8 bits of Service Index (SI). SPI identifies service function path and SI is an indication of number of processed service function. 
 			
-			Network function chaining by NSH requires the following three components: control plane, Service Classifier (SC) and Service Function Forwarder (SFF). As in the figure \ref{fig: NSH} , there is ingress and egress routers in the network marked with SC and network nodes with SFF and SF. Control Plane is in charge of creating service chain and setting the regarding information in SCs and SFFs. 
+			Network function chaining by NSH requires the following three components: control plane, Service Classifier (SC) and Service Function Forwarder (SFF). As shown in the Figure \ref{fig: NSH} , there are ingress and egress routers in the network marked with SC and network nodes with SFF and SF. Control Plane is in charge of creating service chain and setting the regarding information in SCs and SFFs. 
 			
-			As a packet enters ingress router, SC classifies the packet according to the pre-defined policy and apply NSH to the packet with appropriate SPI and SI value. And the packet is sent to the next hop to be processed by FSS. FSS determines the forwarding destination for the first SF based on the NSH and insert overlay header (e.g., VXLAN header) for transmission. When the packet arrives at the SF, the overlay header is striped and the SF takes action. Subsequently SI value is decremented by one and FSS applies new NSH and overlay header to transmit to the next SF. When the service function chaining completes, NSH will be removed at egress SC and normal forwarding resumes.   
+			As a packet enters ingress router, SC classifies the packet according to the pre-defined policy and applies NSH to the packet with appropriate SPI and SI value. And the packet is sent to the next hop to be processed by FSS. FSS determines the forwarding destination for the first SF based on the NSH and inserts overlay header (e.g., VXLAN header) for transmission. When the packet arrives at the SF, the overlay header is striped and the SF takes action. Subsequently SI value is decremented by one and FSS applies new NSH and overlay header to transmit to the next SF. When the service function chaining completes, NSH will be removed at egress SC and normal forwarding resumes.   
 			
-			The advantage of NSH in comparison with OpenFlow-based network operation is the scalability. To use OpenFlow for programming NF chaining, it is necessary to set up all the nodes in the network with OVS. OpenFlow uses Match-Action flowtable which directs packets regardless of the shortest path. If there is a node that does not understand OpenFlow in the same network it could cause loop in the network. So OpenFlow can be used in a single datacenter network or interconnection between small-scaled datacenters in the biggest use case. On the other hand, NSH does not require all the nodes to be NSH-aware. Only the nodes that host Service Functions and ingress/egress routers should understand NSH protocol. This is because the routing from a FSS to the next FSS is done by overlay network so that non-NSH-aware nodes between them can route the packet with shortest path policy. When using NSH, configuring NF chaining in large scale network between datacenters is also possible. From those reasons, NSH is the technology that we want to use for Kernel-based NFV in the future. 
+			The advantage of NSH in comparison with OpenFlow-based network operation is the scalability. To use OpenFlow for programming NF chaining, it is necessary to set up all the nodes in the network with OVS. OpenFlow uses Match-Action flowtable which directs packets regardless of the shortest path. If there is a node that does not understand OpenFlow in the same network it could cause loop in the network. So OpenFlow can be used in a single datacenter network or interconnection between small-scaled datacenters in the biggest use case. On the other hand, NSH does not require all the nodes to be NSH-aware. Only the nodes that host Service Functions and ingress/egress routers should understand NSH protocol. This is because the routing from a SFF to the next SFF is done by overlay network so that non-NSH-aware nodes between them can route the packet with shortest path policy. When using NSH, configuring NF chaining in large scale network between datacenters is also possible. From those reasons, NSH is the technology that I want to use for Kernel-based NFV in the future. 
 	\end{itemize}
 	
 \begin{figure*}[t]
@@ -87,8 +87,11 @@ Figure \ref{fig: overview_2} depicts the case of latter NFs placement. These NFs
 	\label{fig: NSH}
 \end{figure*}
 
-\subsection{Scope of the paper}
+\begin{comment}
+	\subsection{Scope of the paper}
 This thesis focuses on the data plane of NF chaining rather than control plane.  Specifically, NF chaining mechanism for per packet process in a single host is implemented. The system of reassembling IP packets to acquire the original payload for NF such ALG remains as future work. 
+\end{comment}
+
 
 
 

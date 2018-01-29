@@ -14,19 +14,17 @@
  \def\thechapter{\Alph{chapter}}}
 %\renewcommand{\appendixname}{Appendix }
 
-\def\@chapapp{Chapter \thechapter~}
-\def\fnum@figure{Figure \thefigure}
-\def\fnum@table{Table \thetable}
+\def\@chapapp{第\thechapter~章}
+\def\fnum@figure{図\thefigure}
+\def\fnum@table{表\thetable}
 \def\abstract{\if@twocolumn
-\section*{Abstruct}
+\section*{概要}
 \else \small
 \begin{center}
-{\bf Abstruct\vspace{-.5em}\vspace{0pt}}
+{\bf 概要\vspace{-.5em}\vspace{0pt}}
 \end{center}
 \quotation
 \fi}
-\renewcommand*\listfigurename{List of Figures}
-\renewcommand*\listtablename{List of Tables}
 
 %\def\@makechapterhead#1{ \vspace*{150pt} { \parindent 0pt \raggedright
 % \ifnum \c@secnumdepth >\m@ne \centerline{\Large\gt\bf \@chapapp} \par
@@ -102,7 +100,7 @@
 \newif\if西暦\let\if西暦=\iffalse \def\西暦{\let\if西暦=\iftrue}
 \def\thisyear{\count0=\year %
 \ifnum\month < 4 \advance\count0 -1 \fi%
-\ifnum\count0=1 元\else\number\count0\fi\,Academic Year}
+\ifnum\count0=1 元\else\number\count0\fi\,年度}
 
 
 \def\id#1{\gdef\@id{#1}}
@@ -117,17 +115,16 @@
 \begin{center}
 \vskip 1cm
 %\underline{\Large 修士論文} \vskip 2cm
-\underline{\Large Bachelor's Thesis} \vskip 2cm
-\leftline{\underline{Title}} \vskip 1cm
+\underline{\Large 卒業論文} \vskip 2cm
+\leftline{\underline{題目}} \vskip 1cm
 {\Large\gt\bf \@title }\par \vskip 2cm 
-\leftline{\underline{Supervisor}} \vskip 2.5cm
-%{\Large \@teacher} \vskip 0.5cm
-{\Large \@teacher} \vskip 2.5cm
-%{\Large \@subteacher} \vskip 2.5cm
+\leftline{\underline{指導教授}} \vskip 2.5cm
+{\Large \@teacher} \vskip 0.5cm
+{\Large \@subteacher} \vskip 2.5cm
 %{\Large 慶應義塾大学大学院} \vskip  1.5cm
 %{\Large 理工学研究科 \@course 専攻} \vskip  1cm
-{\Large Keio University} \vskip  1.5cm
-{\Large Department of \@course,\\ Faculty of Sciense and Technology} \vskip  1cm
+{\Large 慶應義塾大学} \vskip  1.5cm
+{\Large 理工学部 \@course 科} \vskip  1cm
 {\Large \thisyear} \vskip 0.7cm
 {\Large \@id} \vskip 0.7cm
 {\Large \@author}
@@ -170,23 +167,22 @@
  \begin{center}
  \begin{picture}(180,225)(0,0)
  \huge
- \put(87,223){\makebox(0,0){Summary \ of \ Bachelor \ Thesis}}
+ \put(87,223){\makebox(0,0){論 \ \ \ 文 \ \ \ 要 \ \ \ 旨}}
  \normalsize
 % \put(87,-14){\makebox(0,0)
 %    {慶 應 義 塾 大 学 理 工 学 研 究 科 修 士 課 程}}
  \put(87,-14){\makebox(0,0)
-    {Faculty of Scienece and Technology, Keio University}}
+    {慶 應 義 塾 大 学 理 工 学 部}}
  \footnotesize
-% \put(30,-20){\makebox(0,0){The contents of English summary should be written in about 300 words.}}
- \put(55,-20){\makebox(0,0){* The contents of English summary should be written in about 300 words.}}
+ \put(30,-20){\makebox(0,0){◎内容の要旨は約600字}}
  \normalsize
 % \put(12.5,209){\makebox(0,0){専攻}}
- \put(12.5,209){\makebox(0,0){Dept.}}
- \put(57.5,209){\makebox(0,0){Student ID}}
+ \put(12.5,209){\makebox(0,0){学科}}
+ \put(57.5,209){\makebox(0,0){学籍番号}}
 % \put(57.5,211.5){\makebox(0,0){学籍}}
 % \put(57.5,206.5){\makebox(0,0){番号}}
- \put(117.5,209){\makebox(0,0){Name}}
- \put(8,201){\makebox(0,0)[tl]{(Thesis Title)}}
+ \put(117.5,209){\makebox(0,0){氏名}}
+ \put(8,201){\makebox(0,0)[tl]{(論文題目)}}
 % \put(8,181){\makebox(0,0)[tl]{(内容の要旨)}}
  \put(5,-10){\framebox(160,225){}}
  \put(5,183){\line(1,0){160}}
@@ -198,7 +194,7 @@
  \put(125,203){\dashbox(0,12){}}
 
  {\normalsize
- \put(32.5,209){\makebox(0,0){ICS}}
+ \put(32.5,209){\makebox(0,0){\@course}}
  \put(90,209){\makebox(0,0){\@id}}
  \put(145,209){\makebox(0,0){\@author}}
  \put(88,192){\makebox(0,0)[c]{\large\bf \shortstack{\@title}}}
@@ -257,8 +253,8 @@
  \end{picture}
  \end{center}}}
 
-\def\thebibliography#1{\chapter*{Reference\@mkboth
- {Reference}{}\addcontentsline{toc}{chapter}{\numberline {}Reference}
+\def\thebibliography#1{\chapter*{参 考 文 献\@mkboth
+ {参 考 文 献}{}\addcontentsline{toc}{chapter}{\numberline {}参考文献}
 %\def\thebibliography#1{\chapter*{Reference\@mkboth
 % {Reference}{}\addcontentsline{toc}{chapter}{\numberline {}Reference}
 }\list

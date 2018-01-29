@@ -5,6 +5,7 @@
 \usepackage{float}
 \usepackage{slashbox}
 \usepackage{comment}
+\usepackage[tableposition=top]{caption}
 %% pdf のしおり を作る
 \usepackage[dvipdfmx,%
 bookmarks=true,bookmarksnumbered=true,bookmarkstype=toc,%
@@ -71,6 +72,10 @@ urlcolor=black%
 \chapter{Overview of Targeted Network Functions}
 \label{chap:overview}
 \input{overview}
+
+\chapter{Netfilter Subsystem in Linux Kernel}
+\label{chap:linux}
+\input{linux.tex}
 
 \chapter{Kernel-based NFCI Architecture}
 \label{chap:architecture}

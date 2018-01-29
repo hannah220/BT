@@ -21,7 +21,7 @@ OPNFV\cite{OPNFV} is an open source project that realizes the architecture propo
 			\item VNF Manager: Monitors lifecycle of VNF. Vi-Vnfm interface conveys resource allocation requests by VNF Manager to VIM. Ve-Vnfm interface is used for VNF lifecycle management and exchange of state information. 
 		\end{itemize}
 	\item Software Defined Networking (SDN) Controller: (SDN) Controller is control plane that is responsible for programming physical and virtual networking elements. SDN controller has northbound interface that connects with MANO and VIM, and southbound interface to physical and virtual networking switches. One of the southbound interface that is used is OpenFlow, which defines the communication protocol to enable SDN controller to directly interact with the forwarding plane. 
-The aim of SDN controller in OPNFV is to set up overlay networks that connects VMs, so that NF chaining is accomplished. SDN controllers such as OpenDaylight, OpenStack Neutron and ONOS are integrated in OPNFV.
+The aim of SDN controller in OPNFV is to set up overlay networks that connects VMs, so that NF chaining is accomplished. SDN controllers such as OpenDaylight\cite{OpenDaylight}, OpenStack Neutron and ONOS are integrated in OPNFV.
 \end{enumerate}
 
 A Network Service is described as a NF Forwarding Graph in OPNFV. NF Forwarding Graph has NF nodes connected with virtual link and underlying physical nodes connected with physical link. Figure 4 depicts an example of NF chaining. Forwarding Graph is composed of NF, VNF1, VNF2, ..,VNF4. Depending on the flow, traffic can go through NF chaining of NF1, NF3, NF4 or NF1, NF2, NF4. 
@@ -36,7 +36,7 @@ A Network Service is described as a NF Forwarding Graph in OPNFV. NF Forwarding 
 Although OPNFV is a NFV platform that is widely deployed by enterprise and service provider, this thesis states the following two problems.
 \begin{itemize}
 	\item Complexity of OPNFV \\
-		The architecture of OPNFV contains numerous middleware like OpenStack as a cloud controller, OpenDaylight\cite{OpenDaylight} as a SDN controller, KVM as virtual technologies, etc. Each of them are deriving from different project. This makes the architecture to be complicated and thus prone to compiling errors in different environments. 
+		The architecture of OPNFV contains numerous middleware like OpenStack as a cloud controller, OpenDaylight as a SDN controller, KVM as virtual technologies, etc. Each of them are deriving from different project. This makes the architecture to be complicated and thus prone to compiling errors in different environments. 
 	\item Resource consumption \\
 		By allocating virtual instances to each of the VM, it leads to a lot of resource consumption when deploying a large number of VMs. 
 	\item 

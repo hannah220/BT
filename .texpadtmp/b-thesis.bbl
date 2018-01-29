@@ -110,6 +110,12 @@ D.~K. Rensin, \emph{Kubernetes - Scheduling the Future at Cloud Scale}, 1005
 A.~Kapadia and N.~Chase, ``Accelerate {NFV} {T}ransformation using {OPNFV},''
   in \emph{Understanding {OPNFV}}, 2018.
 
+\bibitem{OpenDaylight}
+\BIBentryALTinterwordspacing
+Open{D}aylight {P}roject. [Online]. Available:
+  \url{https://www.sdxcentral.com/projects/opendaylight-project/}
+\BIBentrySTDinterwordspacing
+
 \bibitem{NSH}
 \BIBentryALTinterwordspacing
 P.~Quinn, U.~Elzur, and C.~Pignataro, ``{Network Service Header (NSH)},'' RFC
